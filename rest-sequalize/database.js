@@ -12,12 +12,14 @@ const Recipe = sequelize.define('recipe', {
 async function seed() {
   return await Promise.all([
     Recipe.create({
-      firstName: 'John',
-      lastName: 'Hancock'
+      title: 'Gulash soup',
+      description: 'desc1',
+      ingredients: 'ingr1'
     }),
     Recipe.create({
-      firstName: 'John2',
-      lastName: 'Hancock2'
+      title: 'Túrós csusza',
+      description: 'desc2',
+      ingredients: 'ingr2'
     })
   ]);
 }
