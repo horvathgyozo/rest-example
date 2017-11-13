@@ -40,6 +40,7 @@
     "feathers-sequelize": "^2.4.0",
     "feathers-socketio": "^2.0.1",
     "helmet": "^3.9.0",
+    "sequelize": "^4.22.6",
     "serve-favicon": "^2.4.5",
     "sqlite3": "^3.1.13",
     "winston": "^2.4.0"
