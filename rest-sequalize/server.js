@@ -3,6 +3,7 @@ const app = express();
 const recipeRouter = require('./recipes.route.js');
 const database = require('./database');
 
+app.use(express.json());
 app.use('/recipes', recipeRouter);
 
 async function start() {

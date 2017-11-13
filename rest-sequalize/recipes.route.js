@@ -12,7 +12,11 @@ router
         const recipe = await Recipe.findById(id);
         res.send(recipe);
     })
-    .post('/',      (req, res) => res.send("Add new recipe"))
+    .post('/',      async (req, res) => {
+        const data = req.body;
+        const recipe = await Recipe.create(data);
+        res.send(recipe);
+    })
     .put('/:id',    (req, res) => res.send("Modify a recipes"))
     .patch('/:id',  (req, res) => res.send("Modify part of a recipes"))
     .delete('/:id', (req, res) => res.send("Delete all recipes"))
