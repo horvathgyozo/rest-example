@@ -1,8 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Recipe = require('./recipe.model');
 
 router
-    .get('/',       (req, res) => res.send("Get all recipes"))
+    .get('/',       (req, res) => {
+        Recipe.findAll().then(recipes => {
+            res.send(recipes);
+        })
+    })
     .get('/:id',    (req, res) => res.send("Get one recipes"))
     .post('/',      (req, res) => res.send("Add new recipe"))
     .put('/:id',    (req, res) => res.send("Modify a recipes"))
