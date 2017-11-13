@@ -3,10 +3,9 @@ const router = express.Router();
 const Recipe = require('./recipe.model');
 
 router
-    .get('/',       (req, res) => {
-        Recipe.findAll().then(recipes => {
-            res.send(recipes);
-        })
+    .get('/',       async (req, res) => {
+        const recipes = await Recipe.findAll();
+        res.send(recipes);
     })
     .get('/:id',    (req, res) => res.send("Get one recipes"))
     .post('/',      (req, res) => res.send("Add new recipe"))
