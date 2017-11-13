@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "feathers-cli": "^2.3.9"
+  }
+}
