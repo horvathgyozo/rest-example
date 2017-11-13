@@ -7,7 +7,11 @@ router
         const recipes = await Recipe.findAll();
         res.send(recipes);
     })
-    .get('/:id',    (req, res) => res.send("Get one recipes"))
+    .get('/:id',    async (req, res) => {
+        const id = req.params.id;
+        const recipe = await Recipe.findById(id);
+        res.send(recipe);
+    })
     .post('/',      (req, res) => res.send("Add new recipe"))
     .put('/:id',    (req, res) => res.send("Modify a recipes"))
     .patch('/:id',  (req, res) => res.send("Modify part of a recipes"))
