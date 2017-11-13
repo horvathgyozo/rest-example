@@ -1,13 +1,4 @@
-const Sequelize = require('sequelize');
-
-const sequelize = new Sequelize('sqlite://db.sqlite');
-
-const Recipe = sequelize.define('recipe', {
-  title: Sequelize.STRING,
-  description: Sequelize.TEXT,
-  ingredients: Sequelize.TEXT,
-  img_url: Sequelize.STRING
-});
+const Recipe = require('./recipe.model');
 
 async function seed() {
   return await Promise.all([
@@ -35,4 +26,7 @@ async function start() {
     console.log(e);
   }
 }
-start();
+
+module.exports = {
+  start
+}
