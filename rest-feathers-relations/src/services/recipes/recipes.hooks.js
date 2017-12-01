@@ -1,12 +1,8 @@
-
-
-const includeIngredientsInRecipe = require('../../hooks/include-ingredients-in-recipe');
-
 module.exports = {
   before: {
     all: [],
-    find: [includeIngredientsInRecipe()],
-    get: [includeIngredientsInRecipe()],
+    find: [],
+    get: [],
     create: [],
     update: [],
     patch: [],
