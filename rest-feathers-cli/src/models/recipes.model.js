@@ -8,7 +8,8 @@ module.exports = function (app) {
   const recipes = sequelizeClient.define('recipes', {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
-    ingredients: DataTypes.TEXT
+    ingredients: DataTypes.TEXT,
+    imgUrl: DataTypes.STRING,
   }, {
     hooks: {
       beforeCount(options) {
