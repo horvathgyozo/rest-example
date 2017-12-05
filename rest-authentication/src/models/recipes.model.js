@@ -20,7 +20,7 @@ module.exports = function (app) {
     },
     imgUrl: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }
   }, {
     hooks: {
