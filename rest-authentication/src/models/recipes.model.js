@@ -6,7 +6,19 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const recipes = sequelizeClient.define('recipes', {
-    text: {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    ingredients: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    imgUrl: {
       type: DataTypes.STRING,
       allowNull: false
     }
