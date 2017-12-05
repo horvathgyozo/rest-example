@@ -21,6 +21,7 @@ module.exports = function (app) {
   recipes.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+    recipes.hasMany(models.messages);
   };
 
   return recipes;
