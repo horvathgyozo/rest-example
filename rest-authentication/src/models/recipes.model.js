@@ -27,6 +27,10 @@ module.exports = function (app) {
       beforeCount(options) {
         options.raw = true;
       }
+    },
+    name: {
+      singular: 'recipe',
+      plural: 'recipes',
     }
   });
 
@@ -34,6 +38,7 @@ module.exports = function (app) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
     recipes.hasMany(models.messages);
+    recipes.belongsToMany(models.users, { through: 'favourites', foreignKey: 'recipeId' });
   };
 
   return recipes;

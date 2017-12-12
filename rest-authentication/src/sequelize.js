@@ -5,7 +5,7 @@ module.exports = function () {
   const connectionString = app.get('sqlite');
   const sequelize = new Sequelize(connectionString, {
     dialect: 'sqlite',
-    logging: false,
+    logging: console.log,
     define: {
       freezeTableName: true
     }
@@ -27,6 +27,7 @@ module.exports = function () {
 
     // Sync to the database
     sequelize.sync();
+    // sequelize.sync({force: true});
 
     return result;
   };
